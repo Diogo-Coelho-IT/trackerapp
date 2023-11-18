@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Financial App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            
+            // Find the button with the class 'lamp-button'
+            const lampButton = document.getElementsByClassName('lamp-button')[0];
+
+            // Check if dark mode is active
+            const isDarkMode = document.body.classList.contains('dark-mode');
+
+             // Change the color based on dark mode status
+            const svgChild = lampButton.querySelector('svg');
+            svgChild.style.fill = isDarkMode ? '#FFD700' : '#000';
+            
+        }
+    </script>
+</head>
+<body>
+
+    <div>
+        <div class="container">
+            <div class="content">
+                <h1 class="app-name">Your Financial App</h1>
+                <button class="load-button">Load Revolut Expenses</button>
+            </div>
+        </div>
+        <div class="top-right">
+            <button class="lamp-button" onclick="toggleDarkMode()">
+                <svg width="45" height="45" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="20" fill="none" stroke="#333" stroke-width="1"/>
+                    <path d="M23 14L18 24H30L25 34" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+   
+    
+
+</body>
+</html>
